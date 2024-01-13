@@ -75,7 +75,7 @@ class ManageTemplates extends ComfyDialog {
 	async load() {
 		let templates = [];
 		if (app.storageLocation === "server") {
-			if (app.isNewUserSession) {
+			if (app.isNewUserSession === true || app.isNewUserSession === undefined) {
 				// New user so migrate existing templates
 				const json = localStorage.getItem(id);
 				if (json) {
